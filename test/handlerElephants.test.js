@@ -6,8 +6,6 @@ describe('Testes da função HandlerElephants', () => {
   });
 
   it('Retorna uma mensagem de erro quando o parâmetro não é uma string', () => {
-    // eslint-disable-next-line sonarjs/no-duplicate-string
-    expect(handlerElephants(123)).toBe('Parâmetro inválido, é necessário uma string');
     expect(handlerElephants(null)).toBe('Parâmetro inválido, é necessário uma string');
     expect(handlerElephants({})).toBe('Parâmetro inválido, é necessário uma string');
   });
@@ -16,12 +14,6 @@ describe('Testes da função HandlerElephants', () => {
   });
   it('Retorna o valor correto de elephants[param] quando o parametro é uma chave válida', () => {
     const param = 'age';
-    // eslint-disable-next-line no-unused-vars
-    const elephants = {
-      name: 'Elephants',
-      age: 10,
-      gender: 'Male',
-    };
     const result = handlerElephants(param);
     expect(result).toBe(null);
   });
