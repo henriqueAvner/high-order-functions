@@ -4,11 +4,13 @@ const { species, hours } = require('../data/zoo_data');
 const weekD = Object.keys(hours);
 
 const infosOfZoo = () => {
-
-  const obj = weekD.reduce((accumulator, currentElement) => {
-    accumulator[currentElement] = {
-      officeHour: `Open from ${hours[currentElement].open}am until ${hours[currentElement].close}pm`,
-      exhibition: species.filter((animal) => animal.availability.includes(currentElement)).map((thisAnimal) => thisAnimal.name),
+  const obj = weekD.reduce((accumulator, currElement) => {
+    accumulator[currElement] = {
+      officeHour: `Open from ${hours[currElement].open}am until ${hours[currElement].close}pm`,
+      exhibition: species
+        .filter((animal) => animal.availability
+          .includes(currElement))
+        .map((thisAnimal) => thisAnimal.name),
     };
     return accumulator;
   }, {});
@@ -20,7 +22,6 @@ const infosOfZoo = () => {
 };
 
 function getSchedule(scheduleTarget) {
-
   if (!scheduleTarget) {
     return infosOfZoo();
   }
@@ -30,7 +31,6 @@ function getSchedule(scheduleTarget) {
   if (!truthSpecies && !weekD.includes(scheduleTarget)) {
     return infosOfZoo();
   }
- 
   if (weekD.includes(scheduleTarget)) {
     return { [scheduleTarget]: infosOfZoo()[scheduleTarget] };
   }
