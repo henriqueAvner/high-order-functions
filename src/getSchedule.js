@@ -22,10 +22,7 @@ const infosOfZoo = () => {
 };
 
 function getSchedule(scheduleTarget) {
-  if (!scheduleTarget) {
-    return infosOfZoo();
-  }
-
+  if (!scheduleTarget) infosOfZoo();
   const truthSpecies = species
     .some((specie) => scheduleTarget === specie.name);
   if (!truthSpecies && !weekD.includes(scheduleTarget)) {
