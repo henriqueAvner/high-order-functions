@@ -11,13 +11,10 @@
 ## Como Executar os Testes
 
 <table>
-<tr>Rodar todos os testes
+<tr>Rodar todos os testes // </tr>
+<tr>Rodar um teste específico</tr>
 <td>npm run test</td>
-</tr>
-
-<tr>Rodar um teste específico
 <td>npm run test (number)</td>
-</tr>
 </table>
 
 ## Configuração do Ambiente
